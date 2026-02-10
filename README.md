@@ -14,3 +14,6 @@ cBurbon: https://unsplash.com/photos/clear-drinking-glass-with-brown-liquid-NLCK
 cNightmare: https://unsplash.com/photos/a-womans-face-is-reflected-in-a-mirror-67n4o8IUw_s
 cGame: https://unsplash.com/photos/black-digital-device-at-0-00-By-tZImt0Ms
 cHeartAttack: https://unsplash.com/photos/a-man-laying-in-a-hospital-bed-next-to-a-monitor-ZjVb97Pq0Ls
+cNurse:https://unsplash.com/photos/a-person-wearing-a-blue-shirt-with-a-white-circle-on-it-6LV3V1gLrP8
+cWakeUp:https://unsplash.com/photos/closeup-photo-of-white-blanket-RnR12I78SFo
+cKeys:https://unsplash.com/photos/a-car-key-with-a-remote-control-attached-to-it-0A_Yx4qwSb8
