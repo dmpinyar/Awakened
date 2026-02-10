@@ -3,13 +3,962 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>Awakened</title>
+<title>Awakened (my branch)</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 50%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0.25) 0%, hsla(14, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14, 100%, 87%, 0) 0%, hsla(14, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Awakened.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Awakened" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="B4EF2401-23BB-4E9A-B873-E4BCEA798214" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="625,250" size="100,100"></tw-passagedata></tw-storydata>
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Awakened (my branch).</tw-noscript></noscript></tw-story>
+<tw-storydata name="Awakened (my branch)" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="ECBF0FE2-1542-4FBD-A6A7-60306B7A9E0A" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="introComputer" color="purple"></tw-tag><tw-tag name="introWebsite" color="blue"></tw-tag><tw-passagedata pid="1" name="Introduction to the character" tags="" position="1225,550" size="100,100">
+&lt;img src=&quot;images/iComputer.png&quot; width=&quot;100%&quot;&gt;
+
+Nothing... I have nothing. If you were to look up the definiton of &#39;unemployed&#39; in the dictonary, the page would have my picture on there. I mean, I have no one else to blame but myself here. Failed out of college after only one year because I guess my brain prioritized playing games rather than studying, and now I can&#39;t even get student loans to fund my second attempt; &quot;Too much of a risk&quot; they said. Now I&#39;m stuck at home, being a disappointment to my parents - as they like so much to remind me. My parents also decided that they cannot keep providing for me as well, and now I have five days to &quot;get my stuff together&quot; before I&#39;m kicked out. I mean, I see my friends making new lives for themselves: Jason as an engineer buying is first house, Lee just getting his doctorate, and Lamar having his first child with his wife. Don&#39;t get me wrong, I&#39;m proud of my friends and their accomplishments, but I can&#39;t help but feel a little behing. Not too much though as I get on for another night of gaming with those same friends.
+
+As I&#39;m scrolling through the random internet, one of my friends, Jason, tells me to look up some medical trials. &quot;They are easy money!&quot; Jason exclaims &quot;I&#39;ve done like five and I got enough for three months rent easily!&quot; I think for a second, do I really want to subject myself to random experiments just to earn some quick cash? Do I really want to stoop so low to the point of risking my body, to risk being permanently damaged? &quot;Yeah sure, why not?&quot; I say as I search up medical trials near me. After scrolling past the different sponsored websites that always pop up first, I see a link to a trial that&#39;s happening near me.
+
+(t8n-time:1s)[[Click on the link.-&gt;Trial Page]]
+
+</tw-passagedata><tw-passagedata pid="2" name="Not Interested In Advertisement" tags="" position="1225,750" size="100,100">Despite your desperation for money, you just aren&#39;t interested in a medical trial.
+
+You think there&#39;s probably something better that you can do with your time.
+
+It&#39;s getting late.
+
+[[Play More Games]]
+
+[[Go to Bed]]
+
+&lt;img src=&quot;images/ajm29.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="3" name="Play More Games" tags="" position="975,750" size="100,100">Despite the time, you play one more game.
+
+Your team is terrible and it is definitely their fault that you lose.
+
+You are getting increasingly tired and should get to bed soon.
+
+(set: $playAgain to it + 1)
+
+(if: $playAgain &gt;= 2) [
+  [[Play More Games-&gt;Different Sleep Node]]
+]
+(else:) [
+  [[Play More Games]]
+]
+
+[[Go To Bed-&gt;Go to Bed]]
+
+&lt;img src=&quot;images/ajm28.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="4" name="Different Sleep Node" tags="" position="875,875" size="100,100">In the middle of a game, you pass out from exhaustion.
+
+Your body made the decision that you needed to go to bed.
+
+You were never gonna end the night on a win.
+
+Hours pass quickly in your slumber.
+
+[[Awake-&gt;Pick Your Life Path]]
+
+&lt;img src=&quot;images/ajm27.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="5" name="Go to Bed" tags="" position="1100,875" size="100,100">You make the responsible decison to finally go to bed.
+
+You are exhausted and don&#39;t want to ruin your sleep schedule any more.
+
+It doesn&#39;t take long to fall asleep.
+
+Hours pass quickly in your slumber.
+
+[[Awake-&gt;Pick Your Life Path]]
+
+&lt;img src=&quot;images/ajm27.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="6" name="Pick Your Life Path" tags="" position="975,1025" size="100,100">You awake just after 11 am, exhausted.
+
+You have to do something with your life.
+
+Your parents won&#39;t let you live with them forever.
+
+
+[[Get a Job]]
+
+(if: $school is 0) [
+[[Go back to School and Finish your Education]]
+]
+
+(if: $anotherPath is 0) [
+[[Find Another Way]]
+]
+
+&lt;img src=&quot;images/ajm26.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="7" name="Get a Job" tags="" position="775,1150" size="100,100">Although your education is minimal, you decide that it is time to get a job.
+
+You really want to make some money rather than going into debt on college.
+
+You go online to find a job but discover that your job choices are minimal.
+
+Fast-Food is quite the growing industry and is your only option.
+
+(link: &quot;Work at McDonalds&quot;)[(set: $restaurant to &quot;McDonalds&quot;)(go-to: &quot;Working in Fast Food&quot;)]
+
+(link: &quot;Work at Chick-fil-A&quot;)[(set: $restaurant to &quot;Chick-fil-A&quot;)(go-to: &quot;Working in Fast Food&quot;)]
+
+(link: &quot;Work at Bojangles&quot;)[(set: $restaurant to &quot;Bojangles&quot;)(go-to: &quot;Working in Fast Food&quot;)]
+
+&lt;img src=&quot;images/ajm6.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="8" name="Find Another Way" tags="" position="1600,1175" size="100,100">You aren&#39;t like other people and choose to take the path less traveled.
+
+While most people would get an education or get a hard-working job, you decide to do something different.
+
+You leave your home, in search for an alternative way to survive.
+
+[[Wander the Streets]]
+
+&lt;img src=&quot;images/ajm25.png&quot; width=&quot;30%&quot;&gt;
+
+(set: $anotherPath to it + 1)</tw-passagedata><tw-passagedata pid="9" name="Wander the Streets" tags="" position="1600,1300" size="100,100">The day fly&#39;s by as you wander the streets.
+
+The sun starts to go down.
+
+Just as you are about to give up, a man approaches you.
+
+&quot;I... I... I... noticed you uh... looked a bit down&quot; the man says. He has a big stutter and speaks as though he just chugged a can of Redbull.
+
+&quot;Take this...&quot;, he smiles as he pulls out a baggy of white powder.
+
+You stand stunned. Your video games haven&#39;t trained you for this interaction.
+
+[[Take Drugs]]
+
+[[Walk off Uninterested]]
+
+&lt;img src=&quot;images/ajm24.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="10" name="Take Drugs" tags="" position="1650,1425" size="100,100">You aren&#39;t like most people.
+
+You choose to take the completely unidentified drugs.
+
+Soon after, you feel awake.
+
+You don&#39;t even remember why you were gonna quit wandering the streets.
+
+The man still stands in front of you bouncing back and forth.
+
+&quot;You owe me $50&quot;, he says with a smirk.
+
+You panic. You have no money.
+
+[[Tell the Man About your Financial Situation]]
+
+[[Punch the Man (You are Pumped up)]]
+
+&lt;img src=&quot;images/ajm22.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="11" name="Walk off Uninterested" tags="" position="1525,1425" size="100,100">You don&#39;t want to be a part of this situation and choose to walk off.
+
+It&#39;s getting late and you are getting tired. 
+
+You arrive home late and immediately fall asleep in your bed.
+
+[[Awake-&gt;Pick Your Life Path]]
+
+&lt;img src=&quot;images/ajm23.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="12" name="Punch the Man (You are Pumped up)" tags="" position="1525,1550" size="100,100">Your weak gamer arms throw a punch at the man.
+
+It barely does anything but is enough to make him mad. Angrily, the man pulls out a knife and stabs you.
+
+The life leaves your face as the man twists the knife in your stomach.
+
+&#39;&#39;Dont Take Drugs From a Stranger...
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm21.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="13" name="Tell the Man About your Financial Situation" tags="" position="1775,1550" size="100,100">You choose to explain to the man that you have no money and are actually in search for a way to make some money to move out.
+
+Although he isn&#39;t happy, he is intrigued by your boldness to take someones random drugs.
+
+He offers you a job to pay off your debt.
+
+[[Accept Job]]
+
+[[Decline Job]]
+
+&lt;img src=&quot;images/ajm20.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="14" name="Go back to School and Finish your Education" tags="" position="975,1150" size="100,100">You decide that you want to go back to school.
+
+Although you dropped out of Highschool one time, you make the decision that this time you want to give it more effort.
+
+You submit your application to the nearest Highschool and by some miracle, you get in.
+
+Weeks go by and you can&#39;t wait.
+
+Your first day is here and you go to class. 
+
+You have to decide the type of student you want to be.
+
+[[Give Full Effort]]
+
+[[Give Little Effort]]
+
+&lt;img src=&quot;images/ajm15.png&quot; width=&quot;30%&quot;&gt;
+
+(set: $school to it + 1)</tw-passagedata><tw-passagedata pid="15" name="Accept Job" tags="" position="1775,1675" size="100,100">For some reason, you make the decision to take the job from the man.
+
+He hands you five baggies of the white powder along with a map with specific lcoations marked.
+
+&quot;G...G...Go to these dumpters and p...p...place a baggy behind each&quot; he says shakily.
+
+[[Complete job]]
+
+&lt;img src=&quot;images/ajm18.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="16" name="Decline Job" tags="" position="1650,1675" size="100,100">Confidently, you tell the man that you aren&#39;t interested.
+
+Shockingly, this doesn&#39;t go over well.
+
+The man looks at you angrily and begins to approach. 
+
+There is no escape.
+
+[[Change your mind and take the job-&gt;Accept Job]]
+
+[[Punch the Man (You are Pumped up)]]
+
+&lt;img src=&quot;images/ajm19.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="17" name="Complete job" tags="" position="1775,1800" size="100,100">By some miracle, you finish delivering 3/5 baggies before morning, like a pro. 
+
+It&#39;s probably because you feel so awake.
+
+You are shockingly good at this.
+
+On your way to the next location, an officer spots you and immediately looks at you suspiciously.
+
+You don&#39;t have many options.
+
+[[Run]]
+
+[[Act Natural -&gt;Run]]
+
+&lt;img src=&quot;images/ajm17.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="18" name="Run" tags="" position="1775,1925" size="100,100">It&#39;s no use. 
+
+The officer was too ready to pursue you. 
+
+He runs to you and immediately tackles you.
+
+You are quickly cuffed and brought to jail.
+
+In court you are found guilty of dealing bags of 90% fentanyl.
+
+&#39;&#39;Don&#39;t sell drugs
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm16.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="19" name="Give Full Effort" tags="" position="900,1275" size="100,100">This time around, you give all of the effort that you can.
+
+You are a straight A student and the other students look up to you for help.
+
+While other students stay out partying, you always prioritize getting your work done and being prepared.
+
+Over the next year, you get your Highschool diploma with a perfect GPA.
+
+You are quite the star student.
+
+You need to decide your next path in life.
+
+[[Apply to College-&gt;Go to College]]
+
+[[Get a job out of Highschool -&gt;Get a Job]]
+
+&lt;img src=&quot;images/ajm14.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="20" name="Give Little Effort" tags="" position="1075,1275" size="100,100">You don&#39;t give much effort in school.
+
+Over the next year, you manage to pass your classes but your GPA is barely acceptable.
+
+There is no chance that you get into college.
+
+You go home after graduation and get a nice nights sleep.
+
+[[Awake-&gt;Pick Your Life Path]]
+
+&lt;img src=&quot;images/ajm31.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="21" name="Go to College" tags="" position="975,1400" size="100,100">You apply to college and get into your top choice without worries.
+
+The effort that you put into High School carries into college and you continue to get straight A&#39;s.
+
+You seem unstoppable.
+
+One day you are approached by a woman from a class and she wants to go out on a date.
+
+[[Go out to Dinner]]
+
+[[Decline the Invitation-&gt;Decline and focus on School]]
+
+&lt;img src=&quot;images/ajm13.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="22" name="Working in Fast Food" tags="" position="675,1250" size="100,100">You decide to work at $restaurant because it is truly so much different than any other fast food restaurant.
+
+You submit an application and it was immediately accepted.
+
+It isn&#39;t the most exciting job but it pays the bills (kinda)
+
+One day your manager notices your outstanding cash register work and asks if you want a promotion.
+
+[[Accept-&gt;Promotion to Linecook]]
+
+[[Decline-&gt;Stay at the Register]]
+
+
+&lt;img src=&quot;images/ajm5.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="23" name="Go out to Dinner" tags="" position="875,1525" size="100,100">You happily accept and go out to a romantic dinner the next night.
+
+At dinner, you are constantly charmed by her. She seems like the perfect woman.
+
+Everything about her is amazing.
+
+Your date is going amazing and then...
+
+[[Awake-&gt;Drugged on Dinner]]
+
+&lt;img src=&quot;images/ajm12.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="24" name="Decline and focus on School" tags="" position="1075,1525" size="100,100">You make the decision that she isn&#39;t worth your time.
+
+You politely decline the dinner invitation and proceed to focus on school with no distractions.
+
+[[Focus on School]]
+
+&lt;img src=&quot;images/ajm10.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="25" name="Drugged on Dinner" tags="" position="875,1650" size="100,100">Dang it.
+
+You awake on a park bench.
+
+You were drugged.
+
+She must have snuck something into your drink while you weren&#39;t looking.
+
+You check your pockets and your wallet is gone.
+
+You need to focus on school
+
+[[Focus on School]]
+
+&lt;img src=&quot;images/ajm11.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="26" name="Focus on School" tags="" position="1000,1825" size="100,100">You have new found determination.
+
+You won&#39;t be distracted.
+
+College is a breeze and you graduate with honors.
+
+[[Get a Good Job]]
+
+[[Live out in the Woods]]
+
+&lt;img src=&quot;images/ajm9.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="27" name="Get a Good Job" tags="" position="1000,1950" size="100,100">You choose to finally get a job and work towards paying off your education.
+
+You worked hard to get here.
+
+It doesn&#39;t take long before you land a job and start making big bucks.
+
+You took the smart route and it paid off.
+
+&#39;&#39;You took the Smart route
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm8.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="28" name="Live out in the Woods" tags="" position="1125,1950" size="100,100">Despite your new found education, you decide that you don&#39;t want to get a job like most of your peers.
+
+You wander off into the woods with nothing but a bag of supplies.
+
+You decide that you would like to scavenge off of nature and live your life away from society.
+
+You live happily alone with the nature surrounding you.
+
+&#39;&#39;This was an odd path to take
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm7.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="29" name="Promotion to Linecook" tags="" position="675,1375" size="100,100">You graciously accept and get $1 more every hour.
+
+Life is good.
+
+It turns out that flipping pattys is something you are shockingly good at.
+
+One day the owner of $restaurant comes in to check on the place.
+
+He can&#39;t believe the phenominal cooking that you are doing.
+
+On the spot, he offers to give you your managers job.
+
+[[Accept-&gt;Promotion to Manager]]
+
+[[Decline-&gt;Stay as Linecook]]
+
+&lt;img src=&quot;images/ajm4.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="30" name="Stay at the Register" tags="" position="550,1375" size="100,100">You are happy working the register.
+
+Taking a new position sounds scary.
+
+40 years go by and you still work that same register.
+
+The people around you love you.
+
+&#39;&#39;You found something you enjoyed
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm1.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="31" name="Promotion to Manager" tags="" position="675,1500" size="100,100">You happily accept.
+
+The previous manager was getting old anyways.
+
+Your manager hands you his hat and leaves.
+
+Years go by.
+
+You are an incredible manager.
+
+The owner of $restaurant comes back to try one of your delicous pattys again.
+
+As he is about to leave, he turns to you and gives you a once in a lifetime opportunity.
+
+&quot;Would you like to be the new owner of $restaurant? This is the best burger I&#39;ve had in my entire life,&quot; he says.
+
+[[Accept-&gt;Own a Restaurant]]
+
+[[Decline-&gt;Stay as Manager]]
+
+&lt;img src=&quot;images/ajm3.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="32" name="Stay as Linecook" tags="" position="550,1500" size="100,100">You are happy working as a line cook.
+
+You also love your manager and would hate to take his position.
+
+40 years go by and you still work as a linecook flipping pattys.
+
+The people around you love you.
+
+&#39;&#39;You found something you enjoyed
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm1.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="33" name="Own a Restaurant" tags="" position="675,1625" size="100,100">You seize the opportunity and graciously accept.
+
+You take the keys from the owner and hire a new manager.
+
+&lt;img src=&quot;images/ajm2.png&quot; width=&quot;30%&quot;&gt;
+
+Over the next few years, you work hard.
+
+You are incredibly good at owning a restaurant.
+
+When you think your life story may end, you get a call from the CEO of $restaurant.
+
+&quot;I&#39;ve seen the work you&#39;ve been doing. I want to offer you a once in a lifetime opportunity. Meet me at the $restaurant headquarters if you&#39;re interested.&quot;
+
+[[Drive to the Headquarters-&gt;Fatal Car Crash]]
+
+[[Decline-&gt;Stay as Restaurant Owner]]</tw-passagedata><tw-passagedata pid="34" name="Stay as Manager" tags="" position="550,1625" size="100,100">Despite the temptation, it doesn&#39;t feel right.
+
+You like being the manager and wouldn&#39;t want to worry about being an owner.
+
+40 years go by and you still work as a manager.
+
+The people around you love you.
+
+&#39;&#39;You found something you enjoyed
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm1.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="35" name="Stay as Restaurant Owner" tags="" position="550,1750" size="100,100">Despite the temptation, you don&#39;t want the position.
+
+You love owning a restaurant.
+
+40 years go by and you still work as the restaurant owner.
+
+You always wonder what would have happened if you met with the CEO.
+
+&#39;&#39;You found something you enjoyed
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm1.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="36" name="Fatal Car Crash" tags="" position="675,1750" size="100,100">You are so excited.
+
+You rush out the door.
+
+This could be your big moment.
+
+You rush into your car and speed off.
+
+On the way you get a text from the CEO.
+
+You look down to read it and...
+
+A head on collision.
+
+It&#39;s fatal.
+
+&#39;&#39;You got greedy
+Learn to be happy with what you have
+The End&#39;&#39;
+
+&lt;img src=&quot;images/ajm30.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="37" name="Trial Page" tags="" position="1400,550" size="100,100">
+&lt;img src=&quot;images/iWebsite.png&quot; width=&quot;100%&quot;&gt;
+
+Clicking on the website, it looks like a basic medical style website. White borders, some random person on the intro page in a white coat, it seems like any other website dealing with medical information. As I look through, the information seems very vague. There is no talk about what the medicine is, or what it might do to the body; it only talks about how &quot;Participants are wanted for a study&quot; and that &quot;We pay handsomely for completing the trial&quot;.
+
+I relay this to my friends, and get some mixed responses. Jason says that the description seems similar to the other tests that he has done, and to go for it. While my other friend, Lamar, seems a lot more skeptical. &quot;Not even knowing what the name of the medicine being tested is seems very suspicious. I wouldn&#39;t do it&quot; says Lamar. 
+
+As I contine to look through, the website seems to keep on inticing me to join the trial. the pay is EXTREMELY generous. It&#39;s more than enough to get my parents off my back, and enough to get my own apartment if I need to. It seems almost too good to be true, but the website says that it is compliant with the FDA and WHO. 
+
+I don&#39;t know... what should I do?
+
+(t8n-time:1s)[[Follow Jason&#39;s advice and sign up!-&gt;Sign up]]
+(t8n-time:1s)[[Follow Lamar&#39;s advice and pass up the opportunity-&gt;Not Interested In Advertisement]]
+
+</tw-passagedata><tw-passagedata pid="38" name="Red" tags="" position="1925,900" size="100,100">Almost as soon as the word leaves my mouth I feel a sharp stab in my back. I turn just in time to see what looks to be an almost 4 inch long needle being pulled out by a mechanical arm attached to the chair. Did it go into my heart?
+&quot;Great! I&#39;ll hand you the cheque and then you can be right on your way! Be sure to come back here in three days for your post-dose examination!&quot; She giddily tells me.
+I get up from the chair and she already has the cheque presented to me. I take it from her,
+&quot;Thanks.&quot; I say.
+
+Nurse Lannae:”Good let us know if you have any side affects. They will check you out and schedule your follow up at the front desk”
+
+As I leave the clinic I set the date of the next trial to be two weeks later the same time.
+The first couple of days are relatively normal.
+
+But on the third day things start to change.
+
+I wake up on the third day feeling better than usual. I feel more energetic and alert then normal. 
+
+A fly starts buzzing around yesterday&#39;s meal.
+
+Watching it buzz around i manage to focus and pinch it out of the air. 
+
+The medicine must be working because i feel more capable then ever. 
+
+I wake up out of bed and notice something  different. Its dark very dark. I walk up to the window and take a look.
+
+Dimitri:”Where is……..”
+
+Dimitri:”Where is…….. Everything”
+
+Its pitch black i cant see anything outside, its like the world dosent exist.
+
+Suddenly I see a white shadow outside. It kind of looks like a child.
+
+????:”*giggle*”
+
+Dimitri:”Hello?”
+
+????:.........”*giggle*”
+
+Dimitri:”Hello? Hello?”
+
+The shadow reaches out to me
+
+????:.........”*giggle*”
+
+Curious I attempt to go outside. I attempt to open it.
+
+*Jiggle**jiggle*
+
+Dimitri Glass:”Why cant I open it”
+
+All of a sudden i feel a jolt and I fall to the floor. 
+
+Dimitri Glass:”Ahhh”
+
+The door opens and i can see outside. All i see is an expanse of nothing
+
+My vision goes hazy
+
+&lt;img src=&quot;images\nightmare .png&quot; width=&quot;100%&quot;&gt;
+
+(t8n-time:1s)[[Wake up-&gt;Wake up]]</tw-passagedata><tw-passagedata pid="39" name="Blue" tags="" position="1500,325" size="100,100">Almost as soon as the word leaves my mouth I feel a sharp stab in my back. I turn just in time to see what looks to be an almost 4 inch long needle being pulled out by a mechanical arm attached to the chair. Did it go into my heart?
+&quot;Great! I&#39;ll hand you the cheque and then you can be right on your way! Be sure to come back here in three days for your post-dose examination!&quot; She giddily tells me.
+I get up from the chair and she already has the cheque presented to me. I take it from her,
+&quot;Thanks.&quot; I say.
+She then proceeds to guide me out of the hospital and as soon as the door closes behind me I hear the click of a lock. The sun is extra bright right now, I can barely open my eyes for the entire walk back to my house, but you know I do have some light blue eyes so I guess it&#39;s a part of the contract. 
+
+(t8n-time:1s)[[Enter my house-&gt;Blue: House]]
+
+&lt;img src=&quot;images/blue.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="40" name="Blue: House" tags="" position="1650,100" size="100,100">It&#39;s been two days since I got that experimental injection. I haven&#39;t really gone outside too much since then. The UV index seems to be really high these past few days, and it&#39;s kind of a chore to move around with that. My parents haven&#39;t been home the past few days either. Someone sent them an emergency letter and they had to go deal with it. It&#39;s actually been quite peaceful without their nagging. I&#39;ve just been playing video games the past few days. Whatever that doctor was testing doesn&#39;t seem to have any noticeable effects, but maybe he&#39;ll find something during the appointment tommorow. Who knows? Maybe I got the placebo. I don&#39;t know how long these trials will last - it was kind of vague on the website - so I might spend my time applying to some more jobs before I go to bed. I got a letter in the mail that said the next appointment was scheduled for 4 in the morning. That&#39;s obnoxious, but whatever. I&#39;ve already been able to buy some nicer clothes with the money I got. Just in case it falls through though, should I (t8n-time:1s)[[apply for jobs-&gt;Blue: jobs]] or (t8n-time:1s)[[go to sleep now?-&gt;Blue: sleep]]
+
+&lt;img src=&quot;images/bHouse.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="41" name="Blue: jobs" tags="" position="1650,225" size="100,100">I spent a few hours applying for some more jobs nearby before I went to bed sometime around midnight, but I finally get to (t8n-time:1s)[[go to bed now-&gt;Blue: late]].
+
+&lt;img src=&quot;images/bJobs.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="42" name="Blue: sleep" tags="" position="1775,25" size="100,100">I wake up to my alarm going off. I&#39;m a little groggy, but whatever, I&#39;ll get ready to go to that building again. 
+
+(t8n-time:1s)[[Get ready-&gt;Blue: Examination]]
+
+&lt;img src=&quot;images/bSleep.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="43" name="Blue: late" tags="" position="1775,225" size="100,100">I wake up to the sun shining through my window. After yawning and getting up from my bed I realize - I missed it! I look at the time. I overslept. 4. Hours. How could this happen!? I quickly throw on some clothes and rush out of my house. The sun is bright again today. I can barely see anything as I rush over to the building. I hope I didn&#39;t miss it. I can&#39;t stress enough how much I need this money. While I&#39;m running over I notice some red bumps on my skin - or at least I think they&#39;re red - It&#39;s kind of hard to see right now. The closer I get to the building the more red bumps I notice. Could this have something to do with the experiment? Why have they only starting showing up now? Could this have something to do with me being late? I stash all those questions away as I reach the building.
+
+(t8n-time:1s)[[Step Inside-&gt;Blue: The Dark Fourier]]
+
+&lt;img src=&quot;images/bLate.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="44" name="Blue: Examination" tags="" position="1975,25" size="100,100">I step into the fourier yet again. Everything seems to be the same pale flourescent lighting. Maybe a little dirtier than last time.
+&quot;Welcome back!&quot; 
+Again, coming from behind me. This woman freaks me out, but if I am gonna pay for rent soon I guess I&#39;ll have to get real comfortable with him.
+&quot;What&#39;s up,&quot; I respond.
+&quot;Have you noticed anything unusual these past few days?&quot; She asks me while leading me back to the examination room. 
+&quot;Not really,&quot; I reply. I mean I barely left my room, so there can&#39;t be too much of a difference.
+She sits me down in the examination room seat and takes a few pictures of me - I guess to catalogue. She then gets up and starts looking for something. I glance over at his computer and see some weird pictures. A person with albinism I guess? Sitting in the same seat I&#39;m in right now. They have pale skin and red eyes.
+&quot;Ow!&quot; I exclaimed. Again, I am suddenly injected with something in my back.
+&quot;Make sure to come here again in 3 days. Don&#39;t be late. I don&#39;t want there to be another incident.&quot; She tells me.
+Incident? I wonder, but I don&#39;t want to ask her - she seems a little off right now.
+She&#39;s smiling widely as she is taking notes next to me. She takes my blood pressure, heart rate, etcetera. Standard doctor stuff I guess, but the way she is doing it just seems wrong to me, but I need to get a good down payment on an apartment before I have to start filing for rent, so I kind of... just... ignore that. 
+Eventually I get up, take the cheque, and walk home. Just like last time - but at a crisp 5 am in the morning. 
+
+(t8n-time:1s)[[Enter house-&gt;Blue: Conclusion]]
+
+&lt;img src=&quot;images/bExamination.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="45" name="Blue: The Dark Fourier" tags="" position="1975,225" size="100,100">I step into the fourier yet again, but it is a lot different this time. Everything seems a lot darker, and almost... green? The fluorescent lights despite being blue before emanate an almost toxic shade of green.
+&quot;Nooooooo!&quot;
+I hear a deafening shout behind me, I turn around and it&#39;s the doctor again.
+&quot;The experiment! You ruined it! You&#39;re late!&quot; She barks at me. My ears ringing more with every new statement he makes. My skin is covered now in these... purple bumps? 
+&quot;Quickly! come!&quot; She grabs my hand and starts yanking me along. My skin hurts.
+He sits me down in the chair and then straps me in.
+&quot;Hey!&quot; I rasp out. She didn&#39;t hear me. My skin hurts. 
+He is rapidly searching for something.She is muttering madly to himself. I only manage to catch a single word, but she seems to be repeating the same thing over and over, &quot;over-exposure.&quot; I can&#39;t think. I can&#39;t think. My skin hurts.
+In the reflection of the stainless steel on the chair I see my face. The purple bumps are everywhere, but the scariest part is my eyes are not just bloodshot, but my pupils are red. Am I going to die? I don&#39;t want to die. My skin hurts. Why did I do this? Where&#39;s my mom?
+She stabs me with something in my arm. It doesn&#39;t look like a needle, but I guess it serves the same purpose. As she is pulling it out I can see chunks of my flesh follow it out and drop on the ground. I can&#39;t feel it anymore. I try to scream and cry but nothing comes out. 
+She shrieks... I think? I couldn&#39;t hear it. The green lights are getting brighter and brighter with every blink. She seems to be seizing. The doctor keeps screaming and stomping. Everything is numb now. The lights are blinding. Everything is white. Did my tardiness cause this? 
+&quot;I miss my mom...&quot; Is this last thing I think.
+
+&#39;&#39; The sun was too bright.
+The End&#39;&#39;
+
+&lt;img src=&quot;images/bDarkFourier.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="46" name="Blue: Conclusion" tags="" position="2125,25" size="100,100">I walk back up my den. I boot up the ol&#39; computer, and get ready for a day of grinding Warframe, I go into my bathroom to take a huge dump, but when I pass the mirror something catches my eye, so I turn my head to look... but something&#39;s off. There&#39;s what looks like an albino in the mirror instead of me? As I move and it follows me I get more confused. It&#39;s skin is so pale and it&#39;s eyes are bright red. Something is wrong. Their facial features are uncanny - inhuman. 
+
+(t8n-time:1s)[[???-&gt;Second Trial-Blue]]
+
+&lt;img src=&quot;images/bConclusion.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="47" name="Sign up" tags="" position="2050,500" size="100,100">“For up to $10,000 a week, trial a new drug to boost cognitive function and reflexes.” Exitomail is an experimental new drug
+
+Dimitri: Bingo!! The easiest money I will ever make in my entire life
+
+
+I go ahead and fill out all of the important information
+
+Date of birth: 07/16/2003
+
+Sex: Male
+
+Weight: 170 lbs
+
+Height: 6’0
+
+Address: 1937 Escher Park Ct 
+
+Insurance: None
+
+“Please pick an available day and time.”
+
+I see some as soon as Tuesday, but i dont want to go there at 11:00 AM, that&#39;s too early. I selected a slot on Friday at 3:00 PM.
+
+Dimitri: That&#39;s a week from now, which gives me enough time to grind out the end of this season of UnderSeen. 
+
+&lt;img src=&quot;images/iWebsite.png&quot; width=&quot;100%&quot;&gt;
+(t8n-time:1s)[[Wait Until Trial.-&gt;Day of trial 1]]</tw-passagedata><tw-passagedata pid="48" name="Day of trial 1" tags="" position="2175,650" size="100,100">I lie to my parents about the trial so they don&#39;t worry about me. I told them I was going to do a gig job like Uber.
+
+I continue my normal routine over the week. Eat, play games, watch pirated tv shows. my efforts have some what payed off because I managed to get gold 3 on UnderSeen.
+
+But today is The First day of the trial:
+I get out of bed at 11:00 AM. 
+
+I hop in my crappy but reliable 90s econobox and drive to the clinic. As im driving i end up In a part of part of town ive never been to before.
+
+I pass by New Luxury apartments, luxury car dealerships, fine dining restaurants, all stuff i could never dream of affording in my life. My car looks out of place compared to everything and everyone around me.
+
+I arrive at the clinic, i park my crappy car next to a row newer nicer vehicles. 
+
+&lt;img src=&quot;images/CheckIn.jpg&quot; width=&quot;100%&quot;&gt;
+
+I head inside and walk up to the check in desk.
+
+Dimitri:“3:00 appointment for ”Dimitri Glass”
+I give her my ID. she looks up at me with a bit of judgement,then back at her computer.
+Desk Attendent: ”I have checked you in. Please fill out the information on this clipboard. The nurse will take it when she calls you.”
+
+”Dimitri:”Thank you”
+
+(t8n-time:1s)[[Walk toward the door-&gt;Checkup]]</tw-passagedata><tw-passagedata pid="49" name="Checkup" tags="" position="1950,725" size="100,100">I sit in a corner of the room. As I fill out the information, I take in the atmosphere and decor of the clinic. It has an almost frutiger aero aesthetic to it. Every surface has a shiny finish. The windows are rounded. The potted plants through out the office have a very strong  green color. The perfectly manicured green grass outside, and the clear sky fit the aesthetic well.
+
+Nurse:“Dimitri Glass”
+
+Nurse:”Good afternoon, Im Nurse Willson but you can call me Lannae, I will be your attending nurse during the medical trial. First we are going to get your height and weight.”
+
+We start walking down the hallway
+
+&lt;img src=&quot;images/Hallway.jpg&quot; width=&quot;100%&quot;&gt;
+
+Nurse Lannae:”Can I confirm your name and date of birth”.
+
+Dimitri Glass:”Dimitri Glass, July sixteenth two-thousand and three”
+ 
+Nurse Lannae:”5’10 and 180 Lbs”
+
+I guess i the information i put down was a little bit dated, i guess i over estimated my metrics
+
+We arrive in the room
+
+A quick glance around and everything is pristine. Bright fluorescent lights shine into my eyes from above and it looks cleaner than any room I&#39;ve ever been in. 
+
+&quot;Is the pay for real?&quot; I ask.
+&quot;Oh of course! I have the cheque right here for after the examination.&quot; she informs me.
+
+&quot;Will I have to be restrained for the test?&quot; I ask her.
+&quot;Oh, don&#39;t worry about that! Those are for when we bring in other species, but please take a seat.&quot; She tells me.
+&quot;Now you&#39;re one of the first people we are conducting this experiment on, so I&#39;m going to give you two choices. Unfortunately, I can&#39;t compromise the experiment too much, so I can&#39;t let you know what each one does. Just choose a color that appeals to you!&quot; She informs me.
+
+(t8n-time:1s)[[&quot;Red.&quot;-&gt;Red]]
+(t8n-time:1s)[[&quot;Blue.&quot;-&gt;Blue]]</tw-passagedata><tw-passagedata pid="50" name="Wake up" tags="" position="2125,1300" size="100,100">I wake up in a cold sweat, confused on what just happened
+
+Dimitri Glass:”It was just a dream”
+I shrug it off thinking it was nothing.
+
+&lt;img src=&quot;images/cWakeUp.jpg&quot; width=&quot;30%&quot;&gt;
+
+(t8n-time:1s)[[Day of the second Trial-&gt;Second Trial-Red]]</tw-passagedata><tw-passagedata pid="51" name="Second Trial-Red" tags="" position="2300,1650" size="100,100">Second Trial: 
+The day of the second trial comes and im a bit nervous. 
+
+I question if i should go to the trial or not
+
+&lt;img src=&quot;images/ckeys.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Yes every thing should be fine-&gt; Second trial cont]]
+
+[[No this thing is too weird-&gt;Stay home-Red]]</tw-passagedata><tw-passagedata pid="52" name="Stay home-Red" tags="" position="2075,1825" size="100,100">Yeah there&#39;s no way I&#39;m going back there.
+
+That dream I had still sends shivers down my spine. 
+
+I won&#39;t go back there.
+
+Anyways, I heard from my parents. They were off helping with my uncle who had a heart attack. Looks like they will stay with him for a few more days so I&#39;ll have the place to myself. Perfect! Time for some games!
+
+&lt;img src=&quot;images/cHeartAttack.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Play Games -&gt; Play Games-Red]]
+
+</tw-passagedata><tw-passagedata pid="53" name=" Second trial cont" tags="" position="2400,1800" size="100,100">I drive to the clinic as I did the first time, check in, and sit down.
+
+Nurse Lannae: “Dimitri Glass”
+
+Nurse Lannae:” Good afternoon, Nice to see you again.
+
+Nurse Lannae:” Confirm your name and date of birth”.
+
+Dimitri:” Dimitri Glass, July sixteenth, two thousand and three.”
+ 
+Nurse Lannae: We are going to get your height and weight 
+
+Nurse Lannae:”5’10 and 170 Lbs”
+
+Nice, I lost weight.
+
+Nurse Lannae:” I&#39;m going to hook you up to the IV like last time, but before we start the treatment, the doctor wants to meet you.”
+
+Dimitri:” Ok, it would be good to know who is behind the treatments.”
+
+After I&#39;m hooked up to the IV, as the Nurse preps the medicine, a blond woman in a lab coat walks in.
+
+???: You must be Dimitri Glass.
+
+Dimitri:” That&#39;s me.”
+
+???: “Nice to meet you. I&#39;m Doctor Beatrice Wright. But you can just call me Doctor Beatrice.”
+
+Doctor Beatrice:” How have the last two weeks been after the first treatment?”
+
+Dimitri Glass:” Its been good, I&#39;ve been super alert and energetic.”
+
+Doctor Beatrice:” That&#39;s great to hear. Have you experienced any side effects? Wierd dreams”
+
+Dimitri:” Now that you mention it, I had a strange dream the other day. I was stuck in my room. All I could see outside was endless blackness. A weird shadow that looked like a kid giggled and called out to me.”
+
+Doctor Beatrice:” You are a very interesting                   soul Mr Glass.”
+The room falls silent. Doctor Beatrice. Looks at me with a curious yet creepy expression
+
+Dimitri:” Me, how am I interesting?”
+
+The nurse returns with the medicine
+Nurse Lannae:” I&#39;ll give you the medicine when it&#39;s ready, and will start when you press the button.”
+
+Doctor Beatrice:” Its absurd, a contradiction. You have an endless expanse that is purposeless to explore. It&#39;s kind of pointless. You seem more than just a dropout. More than just a bum. What potential is lying in your unconscious mind?”
+
+Dimitri:” What do you mean, what is an unconscious mind, get me out of here i dont care anymore!!”
+
+Doctor Beatrice presses the button to start the treatment
+
+Doctor Beatrice:” When you see that little girl again, tell her that I sent you.”
+
+Dimitri” What do you………..”
+
+Before I can complete my sentence, I fall unconscious
+
+&lt;img src=&quot;images/cNurse.jpg&quot; width=&quot;30%&quot;&gt;
+
+(t8n-time:1s)[[??????-&gt;??????]]</tw-passagedata><tw-passagedata pid="54" name="??????" tags="" position="2400,1975" size="100,100">I “wake up” In my room like normal. It feels similar to the bad dream I had before.
+
+Dimitri:”Please not a gain”
+
+I go up to the window.
+
+Dimitri:”The sky is everywhere?”
+
+Instead of it being pitch black like the first time its an endle
+
+I look down
+Dimitri:”What am i wearing?”
+
+I walk up to a mirror.
+
+Dimitri:”its all white”
+
+Im wearing a complettely white outfit. White pants, white shirt, white jacket, white socks, and white shoes.
+
+Dimitri:”Can i leave this time?”
+
+I walk up to the door and open it
+*door opens*
+
+I see a white path leading to a building that appears to endlessly go down.
+
+I decide to walk down the path and enter the the building.
+
+As I enter the room I meet 3 other people wearing similar outfits.
+
+&lt;img src=&quot;images/ending1.png&quot; width=&quot;100%&quot;&gt;
+(t8n-time:1s)[[In the real world-&gt;(Doctor)visit]]
+</tw-passagedata><tw-passagedata pid="55" name="(Doctor)visit" tags="" position="2400,2125" size="100,100">
+Doctor Beatrice enters a half-lit hospital room
+
+She looks at and approaches a child patient in the bed.
+
+Beatrice: Hello my little Nova
+
+Nova:*.........*
+She approaches the bed and strokes the girls hair.
+
+
+Beatrice: Dont worry you will be back with me sood
+
+She kisses the girl on the forehead
+
+Beatrice: Goodnight ,my sweet
+
+Beatrice exits the room..
+
+(End of Game)
+
+&lt;img src=&quot;images/sleeping.png&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="56" name="Second Trial-Blue" tags="" position="2475,1650" size="100,100">Second Trial: 
+The day of the second trial comes and im a bit nervous. 
+
+I question if i should go to the trial or not
+
+&lt;img src=&quot;images/cKeys.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Yes every thing should be fine-&gt; Second trial cont]]
+
+[[No this thing is too weird-&gt;Stay home-Blue]]</tw-passagedata><tw-passagedata pid="57" name=" Play Games-Blue" tags="" position="2750,1925" size="100,100">Only a few minutes into my first match I start to notice my monitor is much brighter than usual. Also the colors are a little off. Why do things seem a little more green than they used to?
+
+&lt;img src=&quot;images/cGreenTint.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[See a Doctor -&gt; Doctor]]
+[[Ignore it -&gt; Ignore]]
+</tw-passagedata><tw-passagedata pid="58" name="Stay home-Blue" tags="" position="2625,1775" size="100,100">Yeah there&#39;s no way I&#39;m going back there.
+
+I breifly remember my inhuman reflection and shudder. I&#39;ve been avoiding mirrors since then. It was late; I&#39;m sure I was just seeing things...
+
+Anyways, I heard from my parents. They were off helping with my uncle who had a heart attack. Looks like they will stay with him for a few more days so I&#39;ll have the place to myself. Perfect! Time for some games!
+
+&lt;img src=&quot;images/cHeartAttack.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Play games -&gt; Play Games-Blue]]
+</tw-passagedata><tw-passagedata pid="59" name=" Doctor" tags="" position="2750,2050" size="100,100">&quot;Man this is going to be expensive.&quot; 
+
+I really hate to do this. I risked so much just to earn money. And now its going right down the drain.
+
+&quot;Man this is going to be expensive.&quot;
+
+But I have no choice. That glimpse I caught of myself. These changes in my vision. I knew this experimental stuff was bad business. I knew it from the start. But I just couldn&#39;t help myself. I guess this is where greed gets you.
+
+&quot;Man this is going to be expensive.&quot;
+
+I drive to the hospital. I park, walk-in, and explain everything to the lady at the check-in desk.
+
+Front desk lady: &quot;Please fill out this paperwork and take a seat. Unfortunately we are very busy so it may be a while.&quot; 
+
+She was not lying. My name is finally called after 2 hours.
+
+&lt;img src=&quot;images/cHospitalReception.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Enter examination room -&gt; Doctor-2]]
+
+</tw-passagedata><tw-passagedata pid="60" name=" Ignore" tags="" position="2875,2050" size="100,100">&quot;It&#39;s probably nothing...&quot;
+
+I just didn&#39;t get a good nights sleep last night. That must be it. I should take a nap.
+
+&lt;img src=&quot;images/cTired.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Take a nap -&gt; Sleep]]
+</tw-passagedata><tw-passagedata pid="61" name=" Doctor-2" tags="" position="2750,2175" size="100,100">I walk into the exam room.
+
+Doctor: &quot;Hey how can I help you...&quot; 
+
+The doctor finishes turning to greet me then stops, stunned.
+
+Doctor: &quot;Uhhhh...&quot;
+
+&quot;Hey, I&#39;ve been having some really strange symptoms lately. But, why are you looking at me like that? Is something wrong?&quot;
+
+The doctor was just staring intently.
+
+Doctor: &quot;Yeah... Have you looked in the mirror lately?&quot;
+
+My memory flashes back to that night in the bathroom. That couldnt be real could it?
+
+Doctor: &quot;Your eyes, they are bleeding internally... They&#39;re entirley stained red. Your skin... you have purple bumps on your neck... I haven&#39;t ever seen anything like this...&quot;
+
+I stop for a second, dumbfounded. 
+
+&quot;I mean I have noticed something was up with my vision. In fact its getting worse. Everything seems... green. And so bright. So very bright. It&#39;s like its burning my skin.&quot;
+
+The doctor rushes over to me. I should be more concerned but I suddenly feel weak. Everything is so bright. So very bright. My skin burns. I feel like I&#39;m being stabbed with needles.
+
+Doctor: &quot;Hey! Hey! Hey!!!&quot;
+
+&quot;So bright...&quot;
+
+Time of death: 11:23 AM.
+
+&lt;img src=&quot;images/cCorpse.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="62" name=" Sleep" tags="" position="2875,2175" size="100,100">It&#39;s been a craze week. Oh well. I grab a quick snack then flop down on my bed. 
+
+The doctor at the trial seemed sincerely emphatic about returning in three days. But I&#39;m sure its nothing.
+
+&lt;img src=&quot;images/cBed.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Close eyes -&gt; Sleep death]]
+</tw-passagedata><tw-passagedata pid="63" name=" Sleep death" tags="" position="2875,2300" size="100,100">A sudden sharp pain. 
+
+&quot;Owww!!!&quot;
+
+Prickles all over my skin. It feels like I am being stabbed by needles. 
+
+What&#39;s happening?
+
+My skin feels hot. No it burns. It burns all over. I scratch crazily but nothing helps.
+
+Suddenly there is this ringing in my ears.
+
+&quot;What kind of dream is this?!?!?&quot;
+
+Your parents return to a deformed body three days later. Skin colored in purple bumps. Inhuman features. Only identifiable by dental records. 
+
+&lt;img src=&quot;images/cCorpse.jpg&quot; width=&quot;30%&quot;&gt;</tw-passagedata><tw-passagedata pid="64" name=" Play Games-Red" tags="" position="2075,1950" size="100,100">I&#39;ve played for way too long. I should be getting to bed... But that nightmare...
+
+&lt;img src=&quot;images/cGame.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Go to Bed -&gt;Try sleep]]
+[[Keep playing -&gt; Play Games-Red]]
+
+</tw-passagedata><tw-passagedata pid="65" name="Try sleep" tags="" position="2075,2075" size="100,100">I brush my teeth and pass out on my bed.
+
+&quot;Man I&#39;m exhausted...&quot;
+
+&lt;img src=&quot;images/cBed.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Close eyes -&gt; Recurring Nightmare]]
+
+</tw-passagedata><tw-passagedata pid="66" name=" Recurring Nightmare" tags="" position="2075,2200" size="100,100">My eyes close.
+
+---
+
+Its pitch black i cant see anything outside, its like the world dosent exist.
+
+Suddenly I see a white shadow outside. It kind of looks like a child.
+
+????:”*giggle*”
+
+---
+
+I jolt up in a panic. 
+
+&quot;Not this again... I can&#39;t keep doing this... Not this again...&quot;
+
+&lt;img src=&quot;images/cNightmare.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Close eyes -&gt; Recurring Nightmare]]
+[[Play games -&gt; Play Games-Red]]
+[[Find another way -&gt; Drink]]
+
+</tw-passagedata><tw-passagedata pid="67" name=" Drink" tags="" position="2075,2325" size="100,100">&quot;I&#39;m losing my mind!&quot;
+
+I really need some sleep. I remember from my year in college that I have no dreams when I drink a lot and black out.
+
+&quot;That&#39;s it!&quot;
+
+I sneak downstairs and help myself to my father&#39;s brandy collection. It&#39;s been a while so I&#39;m a lightweight. A few glasses in and I pass out on the kitchen table.
+
+&lt;img src=&quot;images/cBurbon.jpg&quot; width=&quot;30%&quot;&gt;
+
+[[Dream|Pick Your Life Path]] 
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
